@@ -13,6 +13,9 @@ const navItemStyles = css`
   font-size: 14px;
   font-weight: 500;
   transition: 0.1s ease-in-out;
+  @media (max-width: 767px) {
+    padding: 12px;
+  }
 
   &:hover {
     text-decoration: none;
@@ -22,6 +25,9 @@ const navItemStyles = css`
   img {
     width: 25px;
     margin-right: 8px;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 `
 
@@ -100,7 +106,7 @@ const NavMenu = ({ toggleShowSideMenu }) => {
             Farms
           </NavLink>
         </NavListItem>
-        <NavListItem>
+        <NavListItem className="d-sm-none">
           <NavLink to="/nests">
             <img alt="Nests" src="/images/midgard.svg" />
             Nests
@@ -112,19 +118,19 @@ const NavMenu = ({ toggleShowSideMenu }) => {
             Info
           </NavLink>
         </NavListItem> */}
-        <NavListItem>
+        <NavListItem className="d-sm-none">
           <AnchorLink href="https://docs.google.com/forms/d/e/1FAIpQLSe7ycrw8Dq4C5Vjc9WNlRtTxEhFDB1Ny6jlAByZ2Y6qBo7SKg/viewform?usp=sf_link">
             <img alt="Partnerships/IFO" src="/images/thunder.png" />
             Partnerships/IFO
           </AnchorLink>
         </NavListItem>
-        <NavListItem>
+        <NavListItem className="d-sm-none">
           <AnchorLink href="https://www.goosedefi.com/files/hackenAudit.pdf">
             <img alt="Audit by Hacken" src="/images/sports-car.svg" />
             Audit by Hacken
           </AnchorLink>
         </NavListItem>
-        <NavListItem>
+        <NavListItem className="d-sm-none">
           <AnchorLink href="https://certik.org/projects/goose-finance">
             <img alt="Audit by CertiK" src="/images/sports-car.svg" />
             Audit by CertiK

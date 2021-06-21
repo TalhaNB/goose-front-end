@@ -4,6 +4,7 @@ import { Heading } from '@pancakeswap-libs/uikit'
 import { GiftIcon, WalletIcon } from 'react-line-awesome'
 import HighlightedText from 'components/HighlightedText'
 import StyledButton from 'components/StyledButton'
+import UnlockButton from 'components/UnlockButton'
 
 const Lambo = styled.div`
   text-align: center;
@@ -44,10 +45,10 @@ const Header = () => {
         <GiftIcon className="header-icon" />
         Airdrop
       </StyledButton>
-      <StyledButton background="primary">
+      <UnlockButton background="primary">
         <WalletIcon className="header-icon" />
         Collect Wallet
-      </StyledButton>
+      </UnlockButton>
     </StyledHeader>
   )
 }

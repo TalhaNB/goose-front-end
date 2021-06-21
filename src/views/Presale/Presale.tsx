@@ -40,7 +40,7 @@ const Presale: React.FC = () => {
           Presale
         </Heading>
         <BaseLayout>
-          <div className="span-6">
+          <div className="span-6 span-sm-12 text-center-sm">
             <Heading as="h1" size="xl" mb="24px" color="white">
               World First Liquidity Mining Coin with Static Rewards
             </Heading>
@@ -56,7 +56,7 @@ const Presale: React.FC = () => {
           </div>
         </BaseLayout>
         <BaseLayout>
-          <div className="span-4 d-flex flex-column">
+          <div className="span-4 d-flex flex-column span-sm-12 text-center-sm">
             <img alt="" src="/images/icon1.png" />
             <HighlightedText>
               <Heading mb="10px">Liquidity Mining</Heading>
@@ -71,7 +71,7 @@ const Presale: React.FC = () => {
               way to obtain GOOSEFINANCE will be through purchasing them.
             </Text>
           </div>
-          <div className="span-4 d-flex flex-column">
+          <div className="span-4 d-flex flex-column span-sm-12 text-center-sm">
             <img alt="" src="/images/icon2.png" />
             <HighlightedText>
               <Heading mb="10px">Automatic Rewards to Holders</Heading>
@@ -84,7 +84,7 @@ const Presale: React.FC = () => {
               investors take no action, they still collect additional GOOSEFINANCE just by holding it.
             </Text>
           </div>
-          <div className="span-4 d-flex flex-column">
+          <div className="span-4 d-flex flex-column span-sm-12 text-center-sm">
             <img alt="" src="/images/icon3.png" />
             <HighlightedText>
               <Heading mb="10px">Automatic Burning</Heading>

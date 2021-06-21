@@ -5,6 +5,7 @@ import { EllipsisVIcon } from 'react-line-awesome'
 import { CommunityTag, CoreTag, NoFeeTag, RiskTag } from 'components/Tags'
 import StyledButton from 'components/StyledButton'
 import PillButton from 'components/PillButton'
+import UnlockButton from 'components/UnlockButton'
 import ApyButton from './ApyButton'
 
 export interface ExpandableSectionProps {
@@ -50,6 +51,7 @@ const Wrapper = styled(Flex)`
 const MultiplierTag = styled(Tag)`
   margin-left: 4px;
   align-self: flex-start;
+  font-size: 12px;
 `
 
 const CardHeading: React.FC<ExpandableSectionProps> = ({
@@ -82,14 +84,14 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
             <MultiplierTag variant="secondary">{multiplier}</MultiplierTag>
           </Flex>
         </Flex>
-        <PillButton proportion="sm" background="primary">
+        <UnlockButton proportion="sm" background="primary" className="round-edges">
           Unlock Wallet
-        </PillButton>
+        </UnlockButton>
         <StyledButton background="none" onClick={toggleMore} className="more-button">
           <EllipsisVIcon />
         </StyledButton>
       </Wrapper>
-      <Flex justifyContent="space-between" alignItems="center" mr="150px">
+      <Flex justifyContent="space-between" alignItems="center">
         <Flex alignItems="center">
           <ApyButton
             lpLabel={lpLabel}

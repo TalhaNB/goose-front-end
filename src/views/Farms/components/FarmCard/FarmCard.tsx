@@ -75,6 +75,9 @@ const FCard = styled.div`
   h6,
   div {
     color: white;
+    @media (min-width: 320px) and (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 `
 

@@ -91,6 +91,12 @@ const GlobalStyle = createGlobalStyle`
     grid-column: span 12;
   }
 
+  .span-sm-12 {
+    @media (min-width: 320px) and (max-width: 768px) {
+      grid-column: span 12;
+    }
+  }
+
   .mt-20 {
     margin-top: 20px;
   }
@@ -111,8 +117,24 @@ const GlobalStyle = createGlobalStyle`
     text-align: center !important;
   }
 
+  .text-center-sm {
+    @media (min-width: 320px) and (max-width: 768px) {
+      text-align: center !important;
+    }
+  }
+
+  .d-sm-none {
+    @media (min-width: 320px) and (max-width: 768px) {
+      display: none !important;
+    }
+  }
+
   .font-weight-normal {
     font-weight: 400;
+  }
+
+  .round-edges {
+    border-radius: 50px;
   }
 `
 
