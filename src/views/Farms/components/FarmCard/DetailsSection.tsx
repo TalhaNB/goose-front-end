@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Text, Flex, Link, LinkExternal } from '@pancakeswap-libs/uikit'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { Address } from 'config/constants/types'
+import HighlightedText from 'components/HighlightedText'
 
 export interface ExpandableSectionProps {
   isTokenOnly?: boolean
@@ -52,14 +53,17 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
     <Wrapper>
       <Flex justifyContent="space-between">
         <Text>{TranslateString(316, 'Stake')}:</Text>
-        <StyledLinkExternal href={
-          isTokenOnly ?
-            `https://exchange.goosedefi.com/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
-            :
-          `https://exchange.goosedefi.com/#/add/${liquidityUrlPathParts}`
-        }>
-          {lpLabel}
-        </StyledLinkExternal>
+        <HighlightedText>
+          <StyledLinkExternal
+            href={
+              isTokenOnly
+                ? `https://exchange.goosedefi.com/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
+                : `https://exchange.goosedefi.com/#/add/${liquidityUrlPathParts}`
+            }
+          >
+            {lpLabel}
+          </StyledLinkExternal>
+        </HighlightedText>
       </Flex>
       {!removed && (
         <Flex justifyContent="space-between">
@@ -69,7 +73,7 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
       )}
       <Flex justifyContent="flex-start">
         <Link external href={bscScanAddress} bold={false}>
-          {TranslateString(356, 'View on BscScan')}
+          <HighlightedText>{TranslateString(356, 'View on BscScan')}</HighlightedText>
         </Link>
       </Flex>
     </Wrapper>

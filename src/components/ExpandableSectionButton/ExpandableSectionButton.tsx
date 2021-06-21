@@ -12,6 +12,15 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background: none;
+  transition: 0.1s ease-in-out;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #f7f7f730;
+  }
 
   svg {
     fill: ${({ theme }) => theme.colors.primary};

@@ -5,6 +5,7 @@ import useI18n from 'hooks/useI18n'
 import { useHarvest } from 'hooks/useHarvest'
 import { getBalanceNumber } from 'utils/formatBalance'
 import styled from 'styled-components'
+import StyledButton from 'components/StyledButton'
 import useStake from '../../../../hooks/useStake'
 
 interface FarmCardActionsProps {
@@ -29,15 +30,15 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const displayBalance = rawEarningsBalance.toLocaleString()
 
   return (
-    <Flex mb='8px' justifyContent='space-between' alignItems='center'>
+    <Flex mb="8px" justifyContent="space-between" alignItems="center">
       <Heading color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>{displayBalance}</Heading>
       <BalanceAndCompound>
-        {pid === 12 ?
+        {pid === 12 ? (
           <Button
             disabled={rawEarningsBalance === 0 || pendingTx}
-            size='sm'
-            variant='secondary'
-            marginBottom='15px'
+            size="sm"
+            variant="secondary"
+            marginBottom="15px"
             onClick={async () => {
               setPendingTx(true)
               await onStake(rawEarningsBalance.toString())
@@ -46,8 +47,11 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
           >
             {TranslateString(999, 'Compound')}
           </Button>
-          : null}
-        <Button
+        ) : null}
+        <StyledButton
+          type="outline"
+          background="none"
+          color="white"
           disabled={rawEarningsBalance === 0 || pendingTx}
           onClick={async () => {
             setPendingTx(true)
@@ -56,7 +60,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
           }}
         >
           {TranslateString(999, 'Harvest')}
-        </Button>
+        </StyledButton>
       </BalanceAndCompound>
     </Flex>
   )
